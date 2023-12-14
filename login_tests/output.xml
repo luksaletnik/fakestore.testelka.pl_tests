@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20231214 23:01:45.928" rpa="false" schemaversion="4">
+<suite id="s1" name="Valid Login" source="C:\Users\luksa\PycharmProjects\fakestore.testelka.pl_tests\login_tests\valid_login.robot">
+<test id="s1-t1" name="Valid Login" line="9">
+<kw name="Open Browser To Login Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231214 23:01:46.170" level="INFO">Opening browser 'chrome' to base url 'https://fakestore.testelka.pl/moje-konto/'.</msg>
+<status status="PASS" starttime="20231214 23:01:46.170" endtime="20231214 23:01:50.944"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231214 23:01:50.944" endtime="20231214 23:01:51.055"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231214 23:01:51.055" endtime="20231214 23:01:51.055"/>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Moje konto – FakeStore</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20231214 23:01:51.062" level="INFO">Page title is 'Moje konto – FakeStore'.</msg>
+<status status="PASS" starttime="20231214 23:01:51.055" endtime="20231214 23:01:51.062"/>
+</kw>
+<status status="PASS" starttime="20231214 23:01:51.055" endtime="20231214 23:01:51.062"/>
+</kw>
+<status status="PASS" starttime="20231214 23:01:46.169" endtime="20231214 23:01:51.062"/>
+</kw>
+<kw name="Input Username" library="resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>${VALID_USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231214 23:01:51.063" level="INFO">Typing text 'tester.21633' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20231214 23:01:51.062" endtime="20231214 23:01:51.200"/>
+</kw>
+<status status="PASS" starttime="20231214 23:01:51.062" endtime="20231214 23:01:51.200"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${VALID_PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20231214 23:01:51.200" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg timestamp="20231214 23:01:51.236" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20231214 23:01:51.298" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20231214 23:01:51.200" endtime="20231214 23:01:51.298"/>
+</kw>
+<kw name="Submit Credentials" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath:/html/body/p/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231214 23:01:51.299" level="INFO">Clicking element 'xpath:/html/body/p/a'.</msg>
+<status status="PASS" starttime="20231214 23:01:51.298" endtime="20231214 23:01:51.403"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="customer_login"]/div[1]/form/p[3]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231214 23:01:51.404" level="INFO">Clicking element 'xpath://*[@id="customer_login"]/div[1]/form/p[3]/button'.</msg>
+<status status="PASS" starttime="20231214 23:01:51.404" endtime="20231214 23:01:53.314"/>
+</kw>
+<status status="PASS" starttime="20231214 23:01:51.298" endtime="20231214 23:01:53.314"/>
+</kw>
+<kw name="Welcome Page Should Be Open" library="resource">
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>${LOGIN_URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20231214 23:01:53.320" level="INFO">Current location is 'https://fakestore.testelka.pl/moje-konto/'.</msg>
+<status status="PASS" starttime="20231214 23:01:53.315" endtime="20231214 23:01:53.320"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Moje konto – FakeStore</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20231214 23:01:53.324" level="INFO">Page title is 'Moje konto – FakeStore'.</msg>
+<status status="PASS" starttime="20231214 23:01:53.320" endtime="20231214 23:01:53.324"/>
+</kw>
+<status status="PASS" starttime="20231214 23:01:53.315" endtime="20231214 23:01:53.324"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231214 23:01:53.324" endtime="20231214 23:01:55.470"/>
+</kw>
+<status status="PASS" starttime="20231214 23:01:46.169" endtime="20231214 23:01:55.470"/>
+</test>
+<doc>A test suite with a single test for valid login.
+
+This test has a workflow that is created using keywords in
+the imported resource file.</doc>
+<status status="PASS" starttime="20231214 23:01:45.930" endtime="20231214 23:01:55.471"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Valid Login">Valid Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
