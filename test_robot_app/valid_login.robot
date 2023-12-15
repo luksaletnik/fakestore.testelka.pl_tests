@@ -11,5 +11,5 @@ Valid Login
     Valid Username
     Valid Password
     Submit Credentials
-    Welcome Page Should Be Open
+    Login Page Should Be Open
     [Teardown]    Close Browser

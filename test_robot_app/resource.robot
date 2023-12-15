@@ -48,7 +48,7 @@ Submit Credentials
     Click Element    xpath:/html/body/p/a
     Click Element    xpath://*[@id="customer_login"]/div[1]/form/p[3]/button
     
-Welcome Page Should Be Open
+Login Page Should Be Open
     Location Should Be    ${LOGIN_URL}
     Title Should Be    Moje konto – FakeStore
 
