@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20231215 22:16:37.233" rpa="false" schemaversion="4">
+<suite id="s1" name="Login Tests" source="C:\Users\luksa\PycharmProjects\fakestore.testelka.pl_tests\login_tests">
+<suite id="s1-s1" name="Invalid Login" source="C:\Users\luksa\PycharmProjects\fakestore.testelka.pl_tests\login_tests\invalid_login.robot">
+<test id="s1-s1-t1" name="Invalid Username &amp; Valid Password" line="9">
+<kw name="Open Browser To Login Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231215 22:16:37.495" level="INFO">Opening browser 'chrome' to base url 'https://fakestore.testelka.pl/moje-konto/'.</msg>
+<status status="PASS" starttime="20231215 22:16:37.494" endtime="20231215 22:16:43.350"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231215 22:16:43.350" endtime="20231215 22:16:43.469"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231215 22:16:43.469" endtime="20231215 22:16:43.469"/>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Moje konto – FakeStore</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20231215 22:16:43.476" level="INFO">Page title is 'Moje konto – FakeStore'.</msg>
+<status status="PASS" starttime="20231215 22:16:43.469" endtime="20231215 22:16:43.476"/>
+</kw>
+<status status="PASS" starttime="20231215 22:16:43.469" endtime="20231215 22:16:43.476"/>
+</kw>
+<status status="PASS" starttime="20231215 22:16:37.494" endtime="20231215 22:16:43.476"/>
+</kw>
+<kw name="Invalid Username" library="resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>${INVALID_USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231215 22:16:43.477" level="INFO">Typing text 'invalid' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20231215 22:16:43.477" endtime="20231215 22:16:43.581"/>
+</kw>
+<status status="PASS" starttime="20231215 22:16:43.477" endtime="20231215 22:16:43.581"/>
+</kw>
+<kw name="Valid Password" library="resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${VALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231215 22:16:43.582" level="INFO">Typing text 'test_demo_21633' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20231215 22:16:43.582" endtime="20231215 22:16:43.651"/>
+</kw>
+<status status="PASS" starttime="20231215 22:16:43.582" endtime="20231215 22:16:43.651"/>
+</kw>
+<kw name="Submit Credentials" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath:/html/body/p/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231215 22:16:43.651" level="INFO">Clicking element 'xpath:/html/body/p/a'.</msg>
+<status status="PASS" starttime="20231215 22:16:43.651" endtime="20231215 22:16:43.692"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="customer_login"]/div[1]/form/p[3]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231215 22:16:43.693" level="INFO">Clicking element 'xpath://*[@id="customer_login"]/div[1]/form/p[3]/button'.</msg>
+<status status="PASS" starttime="20231215 22:16:43.692" endtime="20231215 22:16:44.831"/>
+</kw>
+<status status="PASS" starttime="20231215 22:16:43.651" endtime="20231215 22:16:44.831"/>
+</kw>
+<kw name="Login Should Have Failed" library="resource">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>class:woocommerce-error</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20231215 22:16:44.841" level="INFO">Current page contains element 'class:woocommerce-error'.</msg>
+<status status="PASS" starttime="20231215 22:16:44.831" endtime="20231215 22:16:44.841"/>
+</kw>
+<status status="PASS" starttime="20231215 22:16:44.831" endtime="20231215 22:16:44.841"/>
+</kw>
+<status status="PASS" starttime="20231215 22:16:37.494" endtime="20231215 22:16:44.841"/>
+</test>
+<test id="s1-s1-t2" name="Valid Username &amp; Invalid Password" line="16">
+<kw name="Open Browser To Login Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231215 22:16:44.843" level="INFO">Opening browser 'chrome' to base url 'https://fakestore.testelka.pl/moje-konto/'.</msg>
+<status status="PASS" starttime="20231215 22:16:44.843" endtime="20231215 22:16:48.695"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231215 22:16:48.695" endtime="20231215 22:16:48.813"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231215 22:16:48.813" endtime="20231215 22:16:48.813"/>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Moje konto – FakeStore</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20231215 22:16:48.819" level="INFO">Page title is 'Moje konto – FakeStore'.</msg>
+<status status="PASS" starttime="20231215 22:16:48.813" endtime="20231215 22:16:48.819"/>
+</kw>
+<status status="PASS" starttime="20231215 22:16:48.813" endtime="20231215 22:16:48.819"/>
+</kw>
+<status status="PASS" starttime="20231215 22:16:44.843" endtime="20231215 22:16:48.819"/>
+</kw>
+<kw name="Valid Username" library="resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>${VALID_USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231215 22:16:48.820" level="INFO">Typing text 'tester.21633' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20231215 22:16:48.820" endtime="20231215 22:16:48.928"/>
+</kw>
+<status status="PASS" starttime="20231215 22:16:48.820" endtime="20231215 22:16:48.928"/>
+</kw>
+<kw name="Invalid Password" library="resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${INVALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231215 22:16:48.928" level="INFO">Typing text 'invalid' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20231215 22:16:48.928" endtime="20231215 22:16:48.994"/>
+</kw>
+<status status="PASS" starttime="20231215 22:16:48.928" endtime="20231215 22:16:48.994"/>
+</kw>
+<kw name="Submit Credentials" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath:/html/body/p/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231215 22:16:48.995" level="INFO">Clicking element 'xpath:/html/body/p/a'.</msg>
+<status status="PASS" starttime="20231215 22:16:48.995" endtime="20231215 22:16:49.037"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="customer_login"]/div[1]/form/p[3]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231215 22:16:49.038" level="INFO">Clicking element 'xpath://*[@id="customer_login"]/div[1]/form/p[3]/button'.</msg>
+<status status="PASS" starttime="20231215 22:16:49.037" endtime="20231215 22:16:50.025"/>
+</kw>
+<status status="PASS" starttime="20231215 22:16:48.995" endtime="20231215 22:16:50.025"/>
+</kw>
+<kw name="Login Should Have Failed" library="resource">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>class:woocommerce-error</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20231215 22:16:50.036" level="INFO">Current page contains element 'class:woocommerce-error'.</msg>
+<status status="PASS" starttime="20231215 22:16:50.025" endtime="20231215 22:16:50.036"/>
+</kw>
+<status status="PASS" starttime="20231215 22:16:50.025" endtime="20231215 22:16:50.036"/>
+</kw>
+<status status="PASS" starttime="20231215 22:16:44.842" endtime="20231215 22:16:50.036"/>
+</test>
+<test id="s1-s1-t3" name="Invalid Username &amp; Invalid Password" line="23">
+<kw name="Open Browser To Login Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231215 22:16:50.038" level="INFO">Opening browser 'chrome' to base url 'https://fakestore.testelka.pl/moje-konto/'.</msg>
+<status status="PASS" starttime="20231215 22:16:50.038" endtime="20231215 22:16:54.675"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231215 22:16:54.675" endtime="20231215 22:16:54.790"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231215 22:16:54.790" endtime="20231215 22:16:54.790"/>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Moje konto – FakeStore</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20231215 22:16:54.797" level="INFO">Page title is 'Moje konto – FakeStore'.</msg>
+<status status="PASS" starttime="20231215 22:16:54.790" endtime="20231215 22:16:54.797"/>
+</kw>
+<status status="PASS" starttime="20231215 22:16:54.790" endtime="20231215 22:16:54.797"/>
+</kw>
+<status status="PASS" starttime="20231215 22:16:50.037" endtime="20231215 22:16:54.797"/>
+</kw>
+<kw name="Invalid Username" library="resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>${INVALID_USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231215 22:16:54.798" level="INFO">Typing text 'invalid' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20231215 22:16:54.797" endtime="20231215 22:16:54.898"/>
+</kw>
+<status status="PASS" starttime="20231215 22:16:54.797" endtime="20231215 22:16:54.898"/>
+</kw>
+<kw name="Invalid Password" library="resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${INVALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231215 22:16:54.899" level="INFO">Typing text 'invalid' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20231215 22:16:54.899" endtime="20231215 22:16:54.967"/>
+</kw>
+<status status="PASS" starttime="20231215 22:16:54.898" endtime="20231215 22:16:54.967"/>
+</kw>
+<kw name="Submit Credentials" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath:/html/body/p/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231215 22:16:54.967" level="INFO">Clicking element 'xpath:/html/body/p/a'.</msg>
+<status status="PASS" starttime="20231215 22:16:54.967" endtime="20231215 22:16:55.011"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="customer_login"]/div[1]/form/p[3]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231215 22:16:55.011" level="INFO">Clicking element 'xpath://*[@id="customer_login"]/div[1]/form/p[3]/button'.</msg>
+<status status="PASS" starttime="20231215 22:16:55.011" endtime="20231215 22:16:56.243"/>
+</kw>
+<status status="PASS" starttime="20231215 22:16:54.967" endtime="20231215 22:16:56.243"/>
+</kw>
+<kw name="Login Should Have Failed" library="resource">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>class:woocommerce-error</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20231215 22:16:56.254" level="INFO">Current page contains element 'class:woocommerce-error'.</msg>
+<status status="PASS" starttime="20231215 22:16:56.244" endtime="20231215 22:16:56.254"/>
+</kw>
+<status status="PASS" starttime="20231215 22:16:56.243" endtime="20231215 22:16:56.254"/>
+</kw>
+<status status="PASS" starttime="20231215 22:16:50.037" endtime="20231215 22:16:56.254"/>
+</test>
+<test id="s1-s1-t4" name="Empty Username &amp; Valid Password" line="30">
+<kw name="Open Browser To Login Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231215 22:16:56.256" level="INFO">Opening browser 'chrome' to base url 'https://fakestore.testelka.pl/moje-konto/'.</msg>
+<status status="PASS" starttime="20231215 22:16:56.256" endtime="20231215 22:17:00.937"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231215 22:17:00.937" endtime="20231215 22:17:01.050"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231215 22:17:01.050" endtime="20231215 22:17:01.050"/>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Moje konto – FakeStore</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20231215 22:17:01.057" level="INFO">Page title is 'Moje konto – FakeStore'.</msg>
+<status status="PASS" starttime="20231215 22:17:01.050" endtime="20231215 22:17:01.057"/>
+</kw>
+<status status="PASS" starttime="20231215 22:17:01.050" endtime="20231215 22:17:01.057"/>
+</kw>
+<status status="PASS" starttime="20231215 22:16:56.256" endtime="20231215 22:17:01.057"/>
+</kw>
+<kw name="Empty Username" library="resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>${EMPTY}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231215 22:17:01.058" level="INFO">Typing text '' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20231215 22:17:01.058" endtime="20231215 22:17:01.176"/>
+</kw>
+<status status="PASS" starttime="20231215 22:17:01.057" endtime="20231215 22:17:01.176"/>
+</kw>
+<kw name="Valid Password" library="resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${VALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231215 22:17:01.177" level="INFO">Typing text 'test_demo_21633' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20231215 22:17:01.176" endtime="20231215 22:17:01.278"/>
+</kw>
+<status status="PASS" starttime="20231215 22:17:01.176" endtime="20231215 22:17:01.278"/>
+</kw>
+<kw name="Submit Credentials" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath:/html/body/p/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231215 22:17:01.279" level="INFO">Clicking element 'xpath:/html/body/p/a'.</msg>
+<status status="PASS" starttime="20231215 22:17:01.279" endtime="20231215 22:17:01.342"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="customer_login"]/div[1]/form/p[3]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231215 22:17:01.343" level="INFO">Clicking element 'xpath://*[@id="customer_login"]/div[1]/form/p[3]/button'.</msg>
+<status status="PASS" starttime="20231215 22:17:01.342" endtime="20231215 22:17:02.581"/>
+</kw>
+<status status="PASS" starttime="20231215 22:17:01.278" endtime="20231215 22:17:02.581"/>
+</kw>
+<kw name="Login Should Have Failed" library="resource">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>class:woocommerce-error</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20231215 22:17:02.592" level="INFO">Current page contains element 'class:woocommerce-error'.</msg>
+<status status="PASS" starttime="20231215 22:17:02.582" endtime="20231215 22:17:02.592"/>
+</kw>
+<status status="PASS" starttime="20231215 22:17:02.582" endtime="20231215 22:17:02.592"/>
+</kw>
+<status status="PASS" starttime="20231215 22:16:56.255" endtime="20231215 22:17:02.593"/>
+</test>
+<test id="s1-s1-t5" name="Valid Username &amp; Empty Password" line="37">
+<kw name="Open Browser To Login Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231215 22:17:02.594" level="INFO">Opening browser 'chrome' to base url 'https://fakestore.testelka.pl/moje-konto/'.</msg>
+<status status="PASS" starttime="20231215 22:17:02.594" endtime="20231215 22:17:07.167"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231215 22:17:07.167" endtime="20231215 22:17:07.292"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231215 22:17:07.293" endtime="20231215 22:17:07.293"/>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Moje konto – FakeStore</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20231215 22:17:07.301" level="INFO">Page title is 'Moje konto – FakeStore'.</msg>
+<status status="PASS" starttime="20231215 22:17:07.293" endtime="20231215 22:17:07.301"/>
+</kw>
+<status status="PASS" starttime="20231215 22:17:07.293" endtime="20231215 22:17:07.301"/>
+</kw>
+<status status="PASS" starttime="20231215 22:17:02.594" endtime="20231215 22:17:07.301"/>
+</kw>
+<kw name="Valid Username" library="resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>${VALID_USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231215 22:17:07.302" level="INFO">Typing text 'tester.21633' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20231215 22:17:07.302" endtime="20231215 22:17:07.403"/>
+</kw>
+<status status="PASS" starttime="20231215 22:17:07.302" endtime="20231215 22:17:07.403"/>
+</kw>
+<kw name="Empty Password" library="resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${EMPTY}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231215 22:17:07.404" level="INFO">Typing text '' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20231215 22:17:07.403" endtime="20231215 22:17:07.465"/>
+</kw>
+<status status="PASS" starttime="20231215 22:17:07.403" endtime="20231215 22:17:07.465"/>
+</kw>
+<kw name="Submit Credentials" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath:/html/body/p/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231215 22:17:07.466" level="INFO">Clicking element 'xpath:/html/body/p/a'.</msg>
+<status status="PASS" starttime="20231215 22:17:07.466" endtime="20231215 22:17:07.511"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="customer_login"]/div[1]/form/p[3]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231215 22:17:07.512" level="INFO">Clicking element 'xpath://*[@id="customer_login"]/div[1]/form/p[3]/button'.</msg>
+<status status="PASS" starttime="20231215 22:17:07.511" endtime="20231215 22:17:08.707"/>
+</kw>
+<status status="PASS" starttime="20231215 22:17:07.466" endtime="20231215 22:17:08.707"/>
+</kw>
+<kw name="Login Should Have Failed" library="resource">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>class:woocommerce-error</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20231215 22:17:08.717" level="INFO">Current page contains element 'class:woocommerce-error'.</msg>
+<status status="PASS" starttime="20231215 22:17:08.707" endtime="20231215 22:17:08.717"/>
+</kw>
+<status status="PASS" starttime="20231215 22:17:08.707" endtime="20231215 22:17:08.717"/>
+</kw>
+<status status="PASS" starttime="20231215 22:17:02.593" endtime="20231215 22:17:08.717"/>
+</test>
+<test id="s1-s1-t6" name="Empty Username &amp; Empty Password" line="44">
+<kw name="Open Browser To Login Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231215 22:17:08.719" level="INFO">Opening browser 'chrome' to base url 'https://fakestore.testelka.pl/moje-konto/'.</msg>
+<status status="PASS" starttime="20231215 22:17:08.719" endtime="20231215 22:17:12.593"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231215 22:17:12.593" endtime="20231215 22:17:12.714"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231215 22:17:12.714" endtime="20231215 22:17:12.715"/>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Moje konto – FakeStore</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20231215 22:17:12.720" level="INFO">Page title is 'Moje konto – FakeStore'.</msg>
+<status status="PASS" starttime="20231215 22:17:12.715" endtime="20231215 22:17:12.721"/>
+</kw>
+<status status="PASS" starttime="20231215 22:17:12.715" endtime="20231215 22:17:12.721"/>
+</kw>
+<status status="PASS" starttime="20231215 22:17:08.719" endtime="20231215 22:17:12.721"/>
+</kw>
+<kw name="Empty Username" library="resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>${EMPTY}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231215 22:17:12.722" level="INFO">Typing text '' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20231215 22:17:12.721" endtime="20231215 22:17:12.824"/>
+</kw>
+<status status="PASS" starttime="20231215 22:17:12.721" endtime="20231215 22:17:12.824"/>
+</kw>
+<kw name="Empty Password" library="resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${EMPTY}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231215 22:17:12.826" level="INFO">Typing text '' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20231215 22:17:12.825" endtime="20231215 22:17:12.883"/>
+</kw>
+<status status="PASS" starttime="20231215 22:17:12.825" endtime="20231215 22:17:12.883"/>
+</kw>
+<kw name="Submit Credentials" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath:/html/body/p/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231215 22:17:12.884" level="INFO">Clicking element 'xpath:/html/body/p/a'.</msg>
+<status status="PASS" starttime="20231215 22:17:12.883" endtime="20231215 22:17:12.926"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="customer_login"]/div[1]/form/p[3]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231215 22:17:12.927" level="INFO">Clicking element 'xpath://*[@id="customer_login"]/div[1]/form/p[3]/button'.</msg>
+<status status="PASS" starttime="20231215 22:17:12.926" endtime="20231215 22:17:13.906"/>
+</kw>
+<status status="PASS" starttime="20231215 22:17:12.883" endtime="20231215 22:17:13.906"/>
+</kw>
+<kw name="Login Should Have Failed" library="resource">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>class:woocommerce-error</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20231215 22:17:13.916" level="INFO">Current page contains element 'class:woocommerce-error'.</msg>
+<status status="PASS" starttime="20231215 22:17:13.907" endtime="20231215 22:17:13.917"/>
+</kw>
+<status status="PASS" starttime="20231215 22:17:13.907" endtime="20231215 22:17:13.917"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231215 22:17:13.917" endtime="20231215 22:17:16.045"/>
+</kw>
+<status status="PASS" starttime="20231215 22:17:08.719" endtime="20231215 22:17:16.046"/>
+</test>
+<doc>****A test suite containing tests related to invalid login.
+
+This class consist of six test cases with negative scenario,
+where user cannot login when invalid credentials are used</doc>
+<status status="PASS" starttime="20231215 22:16:37.257" endtime="20231215 22:17:16.047"/>
+</suite>
+<suite id="s1-s2" name="Valid Login" source="C:\Users\luksa\PycharmProjects\fakestore.testelka.pl_tests\login_tests\valid_login.robot">
+<test id="s1-s2-t1" name="Valid Login" line="9">
+<kw name="Open Browser To Login Page" library="resource">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231215 22:17:16.055" level="INFO">Opening browser 'chrome' to base url 'https://fakestore.testelka.pl/moje-konto/'.</msg>
+<status status="PASS" starttime="20231215 22:17:16.054" endtime="20231215 22:17:19.848"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231215 22:17:19.848" endtime="20231215 22:17:19.969"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231215 22:17:19.969" endtime="20231215 22:17:19.970"/>
+</kw>
+<kw name="Login Page Should Be Open" library="resource">
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Moje konto – FakeStore</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20231215 22:17:19.976" level="INFO">Page title is 'Moje konto – FakeStore'.</msg>
+<status status="PASS" starttime="20231215 22:17:19.970" endtime="20231215 22:17:19.976"/>
+</kw>
+<status status="PASS" starttime="20231215 22:17:19.970" endtime="20231215 22:17:19.976"/>
+</kw>
+<status status="PASS" starttime="20231215 22:17:16.054" endtime="20231215 22:17:19.976"/>
+</kw>
+<kw name="Valid Username" library="resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>${VALID_USER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231215 22:17:19.977" level="INFO">Typing text 'tester.21633' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20231215 22:17:19.977" endtime="20231215 22:17:20.102"/>
+</kw>
+<status status="PASS" starttime="20231215 22:17:19.977" endtime="20231215 22:17:20.102"/>
+</kw>
+<kw name="Valid Password" library="resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>${VALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231215 22:17:20.103" level="INFO">Typing text 'test_demo_21633' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20231215 22:17:20.102" endtime="20231215 22:17:20.242"/>
+</kw>
+<status status="PASS" starttime="20231215 22:17:20.102" endtime="20231215 22:17:20.242"/>
+</kw>
+<kw name="Submit Credentials" library="resource">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath:/html/body/p/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231215 22:17:20.243" level="INFO">Clicking element 'xpath:/html/body/p/a'.</msg>
+<status status="PASS" starttime="20231215 22:17:20.242" endtime="20231215 22:17:20.290"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="customer_login"]/div[1]/form/p[3]/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231215 22:17:20.291" level="INFO">Clicking element 'xpath://*[@id="customer_login"]/div[1]/form/p[3]/button'.</msg>
+<status status="PASS" starttime="20231215 22:17:20.291" endtime="20231215 22:17:22.175"/>
+</kw>
+<status status="PASS" starttime="20231215 22:17:20.242" endtime="20231215 22:17:22.175"/>
+</kw>
+<kw name="Welcome Page Should Be Open" library="resource">
+<kw name="Location Should Be" library="SeleniumLibrary">
+<arg>${LOGIN_URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<msg timestamp="20231215 22:17:22.182" level="INFO">Current location is 'https://fakestore.testelka.pl/moje-konto/'.</msg>
+<status status="PASS" starttime="20231215 22:17:22.176" endtime="20231215 22:17:22.183"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Moje konto – FakeStore</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20231215 22:17:22.188" level="INFO">Page title is 'Moje konto – FakeStore'.</msg>
+<status status="PASS" starttime="20231215 22:17:22.183" endtime="20231215 22:17:22.188"/>
+</kw>
+<status status="PASS" starttime="20231215 22:17:22.175" endtime="20231215 22:17:22.188"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231215 22:17:22.188" endtime="20231215 22:17:24.334"/>
+</kw>
+<status status="PASS" starttime="20231215 22:17:16.054" endtime="20231215 22:17:24.335"/>
+</test>
+<doc>A test suite with a single test for valid login.
+
+This test has a workflow that is created using keywords in
+the imported resource file.</doc>
+<status status="PASS" starttime="20231215 22:17:16.049" endtime="20231215 22:17:24.336"/>
+</suite>
+<status status="PASS" starttime="20231215 22:16:37.235" endtime="20231215 22:17:24.337"/>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="7" fail="0" skip="0" id="s1" name="Login Tests">Login Tests</stat>
+<stat pass="6" fail="0" skip="0" id="s1-s1" name="Invalid Login">Login Tests.Invalid Login</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2" name="Valid Login">Login Tests.Valid Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
