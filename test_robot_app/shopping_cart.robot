@@ -11,7 +11,6 @@ Resource          resource.robot
 Add Product To The Shopping Cart Without Login
     Open Browser To Shop Page
     Select Product Category
-    Add Product To theShoping Cart
+    Add Product To The Shoping Cart
     Check Product Exist In The Shopping Cart
     [Teardown]    Close Browser
-
