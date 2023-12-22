@@ -2,7 +2,10 @@
 Documentation     ****A test suite containing tests related to invalid login.
 ...
 ...               This class consist of six test cases with negative scenario,
-...               where user cannot login when invalid credentials are used
+...               where user cannot login when invalid credentials are used.
+...
+...               These tests have a workflow that is created using keywords in
+...               the imported resource file.
 Resource          resource.robot
 
 *** Test Cases ***
