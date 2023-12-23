@@ -17,6 +17,20 @@ ${INVALID_PASSWORD}   invalid
 ${LOGIN_URL}          https://fakestore.testelka.pl/moje-konto/
 ${SHOP_URL}           https://fakestore.testelka.pl/shop/
 
+# Unlimited Promo Codes:
+${PC_250}    kwotowy250
+${PC_10%}    10procent
+# Single Promo Code:
+${PC_25S}    kwotowy250pojedynczy
+# Promo Code for products under 3000 PLN
+${PC_300}    kwotowy300
+# Promo Code for products without promotions
+${PC_30P}    kwotowy300bezpromocji
+# Promo Code for single use
+${PC_10S}    10procent1
+# Promo Code for product "Windsurfing" category
+${PC_350}    10procent1
+
 *** Keywords ***
 Open Browser To Shop Page
     Open Browser    ${SHOP_URL}    ${BROWSER}
@@ -44,6 +58,20 @@ Check Product Exist In The Shopping Cart
     Wait Until Element Is Visible    xpath://*[@id="main"]/ul/li[1]/a[3]
     Click Element   xpath://*[@id="main"]/ul/li[1]/a[3]
     Page Should Contain    Egipt - El Gouna
+
+Input Unlimited Promo Codes
+    Input Text    id:coupon_code    ${PC_250}
+    Apply Voucher
+    Sleep    2
+    Input Text    id:coupon_code    ${PC_10%}
+    Apply Voucher
+
+Apply Voucher
+    Click Element    class:button
+
+Sum Payable Should Be Valid
+    Wait Until Element Is Visible    xpath://*[@id="post-6"]/div/div/div[2]/div/table/tbody/tr[4]/td/strong/span
+    Element Should Contain    xpath://*[@id="post-6"]/div/div/div[2]/div/table/tbody/tr[4]/td/strong/span    2 810,00
 
 Open Browser To Login Page
     Open Browser    ${LOGIN_URL}    ${BROWSER}
