@@ -20,16 +20,14 @@ ${SHOP_URL}           https://fakestore.testelka.pl/shop/
 # Unlimited Promo Codes:
 ${PC_250}    kwotowy250
 ${PC_10%}    10procent
-# Single Promo Code:
-${PC_25S}    kwotowy250pojedynczy
-# Promo Code for products under 3000 PLN
+# Promo Code for products of min 3000 PLN
 ${PC_300}    kwotowy300
 # Promo Code for products without promotions
 ${PC_30P}    kwotowy300bezpromocji
 # Promo Code for single use
 ${PC_10S}    10procent1
 # Promo Code for product "Windsurfing" category
-${PC_350}    10procent1
+${PC_350}    windsurfing350
 
 *** Keywords ***
 Open Browser To Shop Page
@@ -42,6 +40,10 @@ Open Browser To Shop Page
 # woocommerce-store-notice__dismiss-link - click on element to continue testing
 Hide Dismiss Link Notice
     Click Element    xpath:/html/body/p/a
+
+Go to Shop Page
+    Go To    ${SHOP_URL}
+    Shop Page Should Be Open
     
 Shop Page Should Be Open
     Title Should Be    Sklep – FakeStore
@@ -51,13 +53,16 @@ Select Product Category
     Click Element    xpath://*[@id="main"]/ul/li[1]/a/h2
 
 # Add to cart: “Egipt - El Gouna”
-Add Product To The Shoping Cart
+Add Product To The Shopping Cart
     Click Element    xpath://*[@id="main"]/ul/li[1]/a[2]
 
 Check Product Exist In The Shopping Cart
     Wait Until Element Is Visible    xpath://*[@id="main"]/ul/li[1]/a[3]
     Click Element   xpath://*[@id="main"]/ul/li[1]/a[3]
     Page Should Contain    Egipt - El Gouna
+
+Input All Possible Promo Codes
+    Input Unlimited Promo Codes
 
 Input Unlimited Promo Codes
     Input Text    id:coupon_code    ${PC_250}
@@ -73,12 +78,29 @@ Sum Payable Should Be Valid
     Wait Until Element Is Visible    xpath://*[@id="post-6"]/div/div/div[2]/div/table/tbody/tr[4]/td/strong/span
     Element Should Contain    xpath://*[@id="post-6"]/div/div/div[2]/div/table/tbody/tr[4]/td/strong/span    2 810,00
 
+Input Other Promo Codes
+    Input Text    id:coupon_code    ${PC_300}
+    Apply Voucher
+    Sleep    2
+    Input Text    id:coupon_code    ${PC_30P}
+    Apply Voucher
+    Sleep    2
+    Input Text    id:coupon_code    ${PC_10S}
+    Apply Voucher
+#    Sleep    2
+#    Input Text    id:coupon_code    ${PC_350}
+#    Apply Voucher
+
+Order Summary Should Be Valid
+    Wait Until Element Is Visible    xpath://*[@id="post-6"]/div/div/div[2]/div/table/tbody/tr[5]/td/strong/span
+    Element Should Contain    xpath://*[@id="post-6"]/div/div/div[2]/div/table/tbody/tr[5]/td/strong/span    2 460,00
+
 Open Browser To Login Page
     Open Browser    ${LOGIN_URL}    ${BROWSER}
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
     Login Page Should Be Open
-    
+
 Login Page Should Be Open
     Title Should Be    Moje konto – FakeStore
 
@@ -103,10 +125,6 @@ Empty Password
 Submit Credentials
     Hide Dismiss Link Notice
     Click Element    xpath://*[@id="customer_login"]/div[1]/form/p[3]/button
-
-Go to Login Page
-    Go To    ${LOGIN_URL}
-    Login Page Should Be Open
 
 Login Should Have Failed
     Page Should Contain Element    class:woocommerce-error
